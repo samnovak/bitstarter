@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 var teststring = "Hello World";
 buf = new Buffer(256);
-len = buf.write('\u00bd + \u00bc = \u00be', 0);
+len = buf.write(fs.readFileSync('index.html'), 0);
 
 
 app.get('/', function(request, response) {
