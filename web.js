@@ -4,9 +4,10 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 var teststring = "Hello World";
 var buffer = new Buffer(256);
+buffer.write("hello","utf-8");
 
 app.get('/', function(request, response) {
-  response.send(buffer.write("Hello", "utf-8"));
+  response.send(buffer.toString('utf-8',0,5));
 });
 
 var port = process.env.PORT || 5000;
