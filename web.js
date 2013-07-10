@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 var teststring = "Hello World";
 var buffer = new Buffer(256);
-buffer.write(fs.readFile("/home/ubuntu/bitstarter/index.html"),"utf-8");
+buffer.write("hello!","utf-8");
 
 app.get('/', function(request, response) {
   response.send(buffer.toString('utf-8',0,5));
