@@ -5,10 +5,10 @@ var fs = require('fs');
 var teststring = "Hello World";
 buf = new Buffer(256);
 len = buf.write('\u00bd + \u00bc = \u00be', 0);
-console.log(len + " bytes: " + buf.toString('utf8', 0, len));
+
 
 app.get('/', function(request, response) {
-  response.send('test');
+  response.send(buf.toString('utf8', 0, len));
 });
 
 var port = process.env.PORT || 5000;
