@@ -4,10 +4,10 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 var teststring = "Hello World";
 var buffer = new Buffer(256);
-buffer.write("hello!","utf-8");
-fs.readFile('/etc/passwd', function (err, data) {
+buffer.write("","utf-8");
+fs.readFile("/home/ubuntu/bitstarter/index.html', function (err, data) {
   if (err) throw err;
-  document.write(data);
+  console.log(buffer);
 });
 app.get('/', function(request, response) {
   response.send(buffer.toString('utf-8',0,6));
